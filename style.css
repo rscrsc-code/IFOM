@@ -1,0 +1,57 @@
+body{
+    margin: 0;
+    padding: 0;
+    color: rgb(104,109,110);
+    hyphens: auto;
+}
+.navbar-nav{
+    text-transform: uppercase;
+}
+
+h3 {
+    font-family: times new roman, serif;
+    text-align-last: center;
+    font-weight: bold;
+    color:black;
+}
+
+h4{
+    font-family: times new roman, serif;
+    color: black;
+    font-weight: bold;
+}
+
+h5{
+    font-family: times new roman, serif;
+    text-align-last: center;
+    font-weight: 300;
+    color: black;
+}
+
+p{
+    color: rgb(104,109,110)
+}
+
+.logos{
+    width: 250px;
+}
+
+.carousel-caption{
+    font-family: "times new roman";
+    
+}
+
+.carousel-caption h2{
+    font-size: 75px;
+}
+
+.carousel-caption p{
+    font-size: 35px;
+}
+
+.footer p{
+    color: black
+}
+.block{
+    text-align-last: justify;
+}
