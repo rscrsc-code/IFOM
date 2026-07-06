@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bootstrap 5 – Spickzettel IFOM</title>
+  <style>
+    body { font-family: monospace; background: #f8f9fa; color: #212529; padding: 20px; }
+    h1 { font-family: sans-serif; color: #0d6efd; border-bottom: 3px solid #0d6efd; padding-bottom: 8px; }
+    h2 { font-family: sans-serif; color: #198754; margin-top: 40px; border-left: 5px solid #198754; padding-left: 10px; }
+    h3 { font-family: sans-serif; color: #6c757d; margin-top: 25px; }
+    pre { background: #212529; color: #f8f9fa; padding: 16px; border-radius: 6px; overflow-x: auto; font-size: 13px; line-height: 1.6; }
+    .note { background: #fff3cd; border-left: 4px solid #ffc107; padding: 10px 14px; margin: 10px 0; border-radius: 4px; font-family: sans-serif; font-size: 14px; }
+    .tip  { background: #d1e7dd; border-left: 4px solid #198754; padding: 10px 14px; margin: 10px 0; border-radius: 4px; font-family: sans-serif; font-size: 14px; }
+  </style>
+</head>
+<body>
+
+<h1>Bootstrap 5 – Spickzettel für die IFOM</h1>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2>1. Grundgerüst einer HTML-Seite</h2>
+<pre>&lt;!DOCTYPE html&gt;
+&lt;html lang="de"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8" /&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0" /&gt;
+  &lt;title&gt;Seitentitel&lt;/title&gt;
+  &lt;link href="css/bootstrap.css" rel="stylesheet" /&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;!-- Inhalt hier --&gt;
+
+  &lt;script src="js/bootstrap.bundle.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2>2. Navbar</h2>
+<pre>&lt;nav class="navbar navbar-expand-lg bg-body-tertiary"&gt;
+  &lt;div class="container-fluid"&gt;
+
+    &lt;!-- Logo / Markenname --&gt;
+    &lt;a class="navbar-brand" href="#"&gt;MeinLogo&lt;/a&gt;
+
+    &lt;!-- Hamburger-Button (mobil) --&gt;
+    &lt;button class="navbar-toggler" type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navMenu"&gt;
+      &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+
+    &lt;!-- Navigationslinks --&gt;
+    &lt;div class="collapse navbar-collapse" id="navMenu"&gt;
+      &lt;ul class="navbar-nav ms-auto"&gt;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#section1"&gt;Über uns&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#section2"&gt;Leistungen&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#kontakt"&gt;Kontakt&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/nav&gt;</pre>
+<div class="note">⚠️ <code>ms-auto</code> = Links nach rechts schieben. <code>navbar-expand-lg</code> = ab 992px Desktop-Ansicht.</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2>3. Grid – Bild und Text nebeneinander (gleiche Höhe)</h2>
+<pre>&lt;div class="container"&gt;
+  &lt;div class="row align-items-center"&gt;   &lt;!-- align-items-center = vertikal zentriert --&gt;
+
+    &lt;!-- Bild (links, halbe Breite auf md+) --&gt;
+    &lt;div class="col-12 col-md-6"&gt;
+      &lt;img src="img/foto.jpg" class="w-100" alt="Beschreibung" /&gt;
+    &lt;/div&gt;
+
+    &lt;!-- Text (rechts, halbe Breite auf md+) --&gt;
+    &lt;div class="col-12 col-md-6"&gt;
+      &lt;h2&gt;Überschrift&lt;/h2&gt;
+      &lt;p&gt;Hier steht der Text neben dem Bild.&lt;/p&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+<div class="tip">✅ <code>col-12</code> = volle Breite auf Handy | <code>col-md-6</code> = halbe Breite ab Tablet</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2>4. Grid – 3 Spalten (z.B. 3 Cards)</h2>
+<pre>&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+
+    &lt;div class="col-12 col-md-4"&gt;
+      &lt;!-- Inhalt Spalte 1 --&gt;
+    &lt;/div&gt;
+
+    &lt;div class="col-12 col-md-4"&gt;
+      &lt;!-- Inhalt Spalte 2 --&gt;
+    &lt;/div&gt;
+
+    &lt;div class="col-12 col-md-4"&gt;
+      &lt;!-- Inhalt Spalte 3 --&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+<div class="note">⚠️ Bootstrap teilt in 12 Spalten. 4+4+4=12 → 3 gleiche Spalten. 6+6=12 → 2 gleiche.</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2>5. Card</h2>
+<pre>&lt;div class="card"&gt;
+  &lt;img src="img/bild.jpg" class="card-img-top" alt="..." /&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;Titel der Card&lt;/h5&gt;
+    &lt;p class="card-text"&gt;Beschreibungstext hier.&lt;/p&gt;
+    &lt;a href="#" class="btn btn-primary"&gt;Mehr lesen&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2>6. Carousel (Bildslider)</h2>
+<pre>&lt;div id="meinCarousel" class="carousel slide"&gt;
+
+  &lt;!-- Punkte unten --&gt;
+  &lt;div class="carousel-indicators"&gt;
+    &lt;button data-bs-target="#meinCarousel" data-bs-slide-to="0" class="active"&gt;&lt;/button&gt;
+    &lt;button data-bs-target="#meinCarousel" data-bs-slide-to="1"&gt;&lt;/button&gt;
+    &lt;button data-bs-target="#meinCarousel" data-bs-slide-to="2"&gt;&lt;/button&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Bilder --&gt;
+  &lt;div class="carousel-inner"&gt;
+    &lt;div class="carousel-item active"&gt;
+      &lt;img src="img/bild1.jpg" class="d-block w-100" alt="Slide 1" /&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-item"&gt;
+      &lt;img src="img/bild2.jpg" class="d-block w-100" alt="Slide 2" /&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-item"&gt;
+      &lt;img src="img/bild3.jpg" class="d-block w-100" alt="Slide 3" /&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;!-- Vor/Zurück Buttons --&gt;
+  &lt;button class="carousel-control-prev" data-bs-target="#meinCarousel" data-bs-slide="prev"&gt;
+    &lt;span class="carousel-control-prev-icon"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="carousel-control-next" data-bs-target="#meinCarousel" data-bs-slide="next"&gt;
+    &lt;span class="carousel-control-next-icon"&gt;&lt;/span&gt;
+  &lt;/button&gt;
+
+&lt;/div&gt;</pre>
+<div class="note">⚠️ Genau ein <code>carousel-item</code> muss die Klasse <code>active</code> haben!</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2>7. Button-Varianten</h2>
+<pre>&lt;a href="#" class="btn btn-primary"&gt;Blau&lt;/a&gt;
+&lt;a href="#" class="btn btn-secondary"&gt;Grau&lt;/a&gt;
+&lt;a href="#" class="btn btn-success"&gt;Grün&lt;/a&gt;
+&lt;a href="#" class="btn btn-danger"&gt;Rot&lt;/a&gt;
+&lt;a href="#" class="btn btn-outline-primary"&gt;Blau (Outline)&lt;/a&gt;
+&lt;a href="#" class="btn btn-lg btn-primary"&gt;Groß&lt;/a&gt;
+&lt;a href="#" class="btn btn-sm btn-primary"&gt;Klein&lt;/a&gt;</pre>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2>8. Häufige Utility-Klassen</h2>
+<pre>&lt;!-- Abstände --&gt;
+class="mt-3"       /* margin-top */
+class="mb-4"       /* margin-bottom */
+class="ms-auto"    /* margin links = auto (schiebt nach rechts) */
+class="px-4"       /* padding links + rechts */
+class="py-5"       /* padding oben + unten */
+
+&lt;!-- Text --&gt;
+class="text-center"    /* zentriert */
+class="text-start"     /* linksbündig */
+class="text-end"       /* rechtsbündig */
+class="fw-bold"        /* fett */
+class="text-muted"     /* grau / gedimmt */
+
+&lt;!-- Bilder --&gt;
+class="w-100"          /* Breite 100% */
+class="img-fluid"      /* responsives Bild */
+class="rounded"        /* abgerundete Ecken */
+
+&lt;!-- Flexbox --&gt;
+class="d-flex"                  /* display flex */
+class="justify-content-center"  /* horizontal zentrieren */
+class="align-items-center"      /* vertikal zentrieren */
+class="gap-3"                   /* Abstand zwischen Flex-Kindern */
+
+&lt;!-- Sichtbarkeit --&gt;
+class="d-none d-md-block"   /* auf Handy versteckt, ab Tablet sichtbar */
+class="d-block d-md-none"   /* nur auf Handy sichtbar */</pre>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2>9. Section mit Hintergrundfarbe (z.B. grauer Bereich)</h2>
+<pre>&lt;section class="container-fluid py-5" style="background-color: #e9ecef;"&gt;
+  &lt;div class="container"&gt;
+    &lt;h2&gt;Abschnittstitel&lt;/h2&gt;
+    &lt;p&gt;Text im grauen Bereich.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/section&gt;</pre>
+<div class="tip">✅ <code>container-fluid</code> = volle Breite (für Hintergrund). <code>container</code> innen = Inhalt bleibt zentriert und begrenzt.</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2>10. Footer</h2>
+<pre>&lt;footer class="container-fluid py-4 mt-5" style="background-color: #212529; color: #f8f9fa;"&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+      &lt;div class="col-md-6"&gt;
+        &lt;h5&gt;Firmenname&lt;/h5&gt;
+        &lt;p&gt;Adresse, PLZ Ort&lt;br /&gt;Tel: 0123 456789&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div class="col-md-6 text-md-end"&gt;
+        &lt;p&gt;&amp;copy; 2025 Firmenname. Alle Rechte vorbehalten.&lt;/p&gt;
+        &lt;a href="#" style="color: #adb5bd;"&gt;Impressum&lt;/a&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/footer&gt;</pre>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2>11. CSS-Variablen (eigene Farben)</h2>
+<pre>/* In style.css ganz oben definieren: */
+:root {
+  --farbe-primary: #2c6e49;
+  --farbe-accent:  #f4a261;
+  --farbe-bg:      #f8f9fa;
+  --farbe-text:    #333333;
+}
+
+/* Dann verwenden: */
+h1 {
+  color: var(--farbe-primary);
+}
+.btn-custom {
+  background-color: var(--farbe-accent);
+}</pre>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<h2>12. Smooth Scroll (in style.css)</h2>
+<pre>html {
+  scroll-behavior: smooth;
+}</pre>
+<div class="tip">✅ Damit scrollen Anker-Links (<code>href="#section1"</code>) sanft statt zu springen.</div>
+
+</body>
+</html>
